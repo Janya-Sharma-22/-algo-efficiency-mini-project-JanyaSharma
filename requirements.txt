@@ -1,0 +1,8 @@
+Necessary packages:
+matplotlib
+numpy
+memory_profiler
+
+Optional (if you want to run Jupyter locally instead of only in Colab):
+jupyter
+notebook
