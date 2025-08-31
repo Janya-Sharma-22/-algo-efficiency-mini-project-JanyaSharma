@@ -16,7 +16,7 @@ INSTRUCTIONS:
 [ git clone https://github.com/<your-username>/algo-efficiency-mini-project-<yourname>.git
 cd algo-efficiency-mini-project-<yourname> ]
 
-3. Install Dependencies
+2. Install Dependencies
 In Colab or local environment, install required packages:
 
 [pip install matplotlib numpy memory_profiler jupyter]
