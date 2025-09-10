@@ -41,6 +41,8 @@ Selection Sort
 Searching Algorithm-
 Binary Search
 
+TIME COMPLEXITY ANALYSIS:
+
 | Algorithm             | Best Case  | Average Case | Worst Case |
 | --------------------- | ---------- | ------------ | ---------- |
 | Fibonacci (Recursive) | O(2^n)     | O(2^n)       | O(2^n)     |
@@ -53,14 +55,20 @@ Binary Search
 | Binary Search         | O(1)       | O(log n)     | O(log n)   |
 
 
-Space Complexity Analysis
+SPACE COMPLEXITY ANALYSIS:
 
 Fibonacci Recursive → O(n) (recursion stack).
+
 Fibonacci DP → O(n), can be optimized to O(1).
+
 Merge Sort → O(n) extra space.
+
 Quick Sort → O(log n) recursion stack.
+
 Insertion, Bubble, Selection → O(1) in-place.
+
 Binary Search (iterative) → O(1), recursive → O(log n).
+
 
 #TRADE OFFS AND SUSTAINABILITY
 
@@ -74,7 +82,6 @@ Very inefficient (O(2^n)) for large n.
 Wastes computation by recalculating subproblems.
 Not suitable for real-world applications beyond very small inputs.
 
-
 Fibonacci (Dynamic Programming)
 
 Suitability:
@@ -84,7 +91,6 @@ Demonstrates the power of DP.
 Trade-offs:
 Uses extra memory (O(n)) for storing results.
 Can be optimized further with "space-optimized DP" (only storing last 2 results).
-
 
 Merge Sort
 
@@ -96,7 +102,6 @@ Trade-offs:
 Requires extra memory (O(n)), which can be costly for huge datasets.
 Slower for small input sizes compared to simpler sorts.
 
-
 Quick Sort
 
 Suitability:
@@ -106,7 +111,6 @@ Trade-offs:
 Worst case is O(n^2) (if pivots are bad).
 Not stable.
 Recursive implementation can cause stack overflow for huge arrays.
-
 
 Insertion Sort
 
@@ -118,7 +122,6 @@ Trade-offs:
 O(n²) for large inputs.
 Not good for big datasets.
 
-
 Bubble Sort
 
 Suitability:
@@ -127,7 +130,6 @@ Helps beginners understand sorting concepts.
 Trade-offs:
 Extremely slow (O(n²)), never used in practice.
 Inefficient even for moderately sized inputs.
-
 
 Selection Sort
 
@@ -138,7 +140,6 @@ Trade-offs:
 Still O(n²) → bad for large inputs.
 Not stable by default.
 
-
 Binary Search
 
 Suitability:
@@ -147,6 +148,63 @@ Great for databases, search engines, and real-time lookups.
 Trade-offs:
 Requires sorted data (if unsorted → need to sort first).
 Not useful for dynamic data where inserts/deletes happen often.
+
+
+Trade-offs: Time vs Space Complexity
+
+🔹 Fibonacci (Naïve Recursive)
+
+Time: Exponential O(2^n) → grows extremely fast, impractical for even moderate n.
+Space: O(n) → recursion depth stack.
+Trade-off: Saves memory compared to DP (no table), but execution is horribly slow. Good only for teaching recursion.
+
+🔹 Fibonacci (Dynamic Programming)
+
+Time: Linear O(n) → much faster than recursion.
+Space: O(n) → extra array to store results.
+Trade-off: Faster execution at the cost of extra memory. Useful when n is large and speed is critical.
+
+🔹 Merge Sort
+
+Time: Always O(n log n) → predictable and efficient.
+Space: O(n) → needs extra arrays for merging.
+Trade-off: Excellent speed for large datasets, but extra memory is required. Preferred when stability is needed.
+
+🔹 Quick Sort
+
+Time:
+Best/Average Case: O(n log n)
+Worst Case: O(n²) (if pivot is poorly chosen).
+Space: O(log n) due to recursion stack (in-place otherwise).
+Trade-off: Very fast in practice and memory-efficient, but unstable worst-case. Great default choice for general-purpose sorting.
+
+🔹 Insertion Sort
+
+Time:
+Best Case: O(n) (already sorted).
+Worst/Average Case: O(n²).
+Space: O(1) → in-place.
+Trade-off: Extremely space-efficient, but slow for large datasets. Best for small or nearly sorted data.
+
+🔹 Bubble Sort
+
+Time:
+Best Case: O(n) (if optimized with early exit).
+Worst/Average Case: O(n²).
+Space: O(1) → in-place.
+Trade-off: Minimal memory use, but very inefficient. Mostly educational.
+
+🔹 Selection Sort
+
+Time: Always O(n²) regardless of input.
+Space: O(1) → in-place.
+Trade-off: Stable space usage, but time cost is high. Rarely used in practice.
+
+🔹 Binary Search
+
+Time: O(log n) → extremely efficient.
+Space: O(1) iterative, O(log n) recursive (stack).
+Trade-off: Fastest searching algorithm for sorted data, but requires sorting first (which costs O(n log n)). 
 
 Risks & Limitations:
 + Recursive algorithms may hit Python’s recursion depth limit (≈1000).
