@@ -1,0 +1,31 @@
+| Algorithm             | Input / Output                                    | Time Complexity (Best / Avg / Worst) | Space Complexity | Trade-offs (Time vs Space)                                                               |
+| --------------------- | ------------------------------------------------- | ------------------------------------ | ---------------- | ---------------------------------------------------------------------------------------- |
+| Fibonacci (Recursive) | Input: `n` → nth Fibonacci number                 | O(2^n) / O(2^n) / O(2^n)             | O(n)             | Very small memory use, but exponential time → impractical.                               |
+| Fibonacci (DP)        | Input: `n` → nth Fibonacci number                 | O(n) / O(n) / O(n)                   | O(n)             | Extra memory but vastly faster; preferred for large `n`.                                 |
+| Merge Sort            | Input: list → Output: sorted list                 | O(n log n) / O(n log n) / O(n log n) | O(n)             | Stable & efficient, but needs extra memory.                                              |
+| Quick Sort            | Input: list → Output: sorted list                 | O(n log n) / O(n log n) / O(n²)      | O(log n)         | Memory-light and fast, but worst-case slow if pivots chosen poorly.                      |
+| Insertion Sort        | Input: list → Output: sorted list                 | O(n) / O(n²) / O(n²)                 | O(1)             | Very space-efficient, but slow on large datasets; good for small/narrowly sorted arrays. |
+| Bubble Sort           | Input: list → Output: sorted list                 | O(n) / O(n²) / O(n²)                 | O(1)             | Simple & space-efficient, but extremely slow; educational use only.                      |
+| Selection Sort        | Input: list → Output: sorted list                 | O(n²) / O(n²) / O(n²)                | O(1)             | Consistent but inefficient; stable memory but poor performance.                          |
+| Binary Search         | Input: sorted list + target → Output: index or -1 | O(1) / O(log n) / O(log n)           | O(1)             | Best time-space trade-off; requires sorted input beforehand.                             |
+
+
+Reflections: Observed vs Expected Behavior
+
+1. Fibonacci Recursive vs DP:
+As expected, recursive version exploded in execution time even for small n, while DP handled larger values easily.
+Space was slightly higher for DP, but the speed benefit outweighed the cost.
+
+2. Sorting Algorithms:
+Merge Sort and Quick Sort confirmed O(n log n) scaling: they grew slowly compared to quadratic algorithms.
+Insertion, Bubble, and Selection visibly slowed for larger arrays (O(n²) curves rose sharply).
+Memory behavior matched theory: Merge Sort used the most memory, while others stayed constant.
+
+3. Binary Search:
+Execution time was almost flat — confirming logarithmic scaling is barely noticeable at small inputs.
+Space usage stayed constant, as expected.
+
+4. Overall Trade-offs:
+Faster algorithms usually pay with more memory (Merge Sort, Fibonacci DP).
+Memory-light algorithms (Insertion, Selection, Bubble) suffer in speed.
+Binary Search is the “best of both worlds” but limited to sorted inputs.
